@@ -33,6 +33,7 @@ namespace Adventures_Crud
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.databaseTablesDropDown = new System.Windows.Forms.ComboBox();
             this.tableSelectLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,13 +46,14 @@ namespace Adventures_Crud
             this.viewDataButton.TabIndex = 0;
             this.viewDataButton.Text = "View";
             this.viewDataButton.UseVisualStyleBackColor = true;
-            this.viewDataButton.Click += new System.EventHandler(this.button1_Click);
+            this.viewDataButton.Click += new System.EventHandler(this.viewDataButton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 97);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1419, 521);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -81,11 +83,20 @@ namespace Adventures_Crud
             this.tableSelectLabel.TabIndex = 3;
             this.tableSelectLabel.Text = "Database Tables";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(356, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(201, 26);
+            this.textBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1443, 630);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tableSelectLabel);
             this.Controls.Add(this.databaseTablesDropDown);
             this.Controls.Add(this.dataGridView1);
@@ -106,6 +117,7 @@ namespace Adventures_Crud
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox databaseTablesDropDown;
         private System.Windows.Forms.Label tableSelectLabel;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

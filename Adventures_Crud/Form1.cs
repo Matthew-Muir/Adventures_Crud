@@ -18,14 +18,25 @@ namespace Adventures_Crud
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void viewDataButton_Click(object sender, EventArgs e)
         {
-            var text = databaseTablesDropDown.Text;
-            MessageBox.Show(text);
-            //SqlDataAdapter da = new SqlDataAdapter("select * from SalesLT.Customer", Properties.Settings.Default.Connection);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-            //dataGridView1.DataSource = ds.Tables[0];
+            
+            var selectedTable = databaseTablesDropDown.Text;
+            selectedTable = selectedTable.Replace(" ", "");
+            if(selectedTable != "")
+            {
+                SqlDataAdapter da = new SqlDataAdapter($"EXEC  GetReadOnly{selectedTable}", Properties.Settings.Default.Connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                textBox1.Enabled = false;
+                /*
+                 Create multiple fields to match columns for editable tables. 
+                When one table is selected update those fields and their labels.
+                 */
+            }
+
         }
 
     }
