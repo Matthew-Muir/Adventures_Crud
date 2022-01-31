@@ -77,7 +77,7 @@ namespace Adventures_Crud
             // viewDataButton
             // 
             this.viewDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewDataButton.Location = new System.Drawing.Point(10, 130);
+            this.viewDataButton.Location = new System.Drawing.Point(7, 66);
             this.viewDataButton.Name = "viewDataButton";
             this.viewDataButton.Size = new System.Drawing.Size(75, 28);
             this.viewDataButton.TabIndex = 0;
@@ -99,22 +99,16 @@ namespace Adventures_Crud
             this.databaseTablesDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.databaseTablesDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.databaseTablesDropDown.FormattingEnabled = true;
-            this.databaseTablesDropDown.Items.AddRange(new object[] {
-            "Product",
-            "Product Model",
-            "Product Category",
-            "Product Description",
-            "Product Model Product Description"});
-            this.databaseTablesDropDown.Location = new System.Drawing.Point(10, 96);
+            this.databaseTablesDropDown.Location = new System.Drawing.Point(7, 32);
             this.databaseTablesDropDown.Name = "databaseTablesDropDown";
-            this.databaseTablesDropDown.Size = new System.Drawing.Size(318, 28);
+            this.databaseTablesDropDown.Size = new System.Drawing.Size(399, 28);
             this.databaseTablesDropDown.TabIndex = 2;
             // 
             // tableSelectLabel
             // 
             this.tableSelectLabel.AutoSize = true;
             this.tableSelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableSelectLabel.Location = new System.Drawing.Point(102, 73);
+            this.tableSelectLabel.Location = new System.Drawing.Point(144, 9);
             this.tableSelectLabel.Name = "tableSelectLabel";
             this.tableSelectLabel.Size = new System.Drawing.Size(145, 20);
             this.tableSelectLabel.TabIndex = 3;
@@ -123,143 +117,143 @@ namespace Adventures_Crud
             // input01
             // 
             this.input01.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input01.Location = new System.Drawing.Point(259, 34);
+            this.input01.Location = new System.Drawing.Point(489, 68);
             this.input01.Name = "input01";
-            this.input01.Size = new System.Drawing.Size(124, 26);
+            this.input01.Size = new System.Drawing.Size(129, 26);
             this.input01.TabIndex = 4;
             // 
             // inputLabel01
             // 
             this.inputLabel01.AutoSize = true;
-            this.inputLabel01.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel01.Location = new System.Drawing.Point(256, 18);
+            this.inputLabel01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel01.Location = new System.Drawing.Point(492, 52);
             this.inputLabel01.Name = "inputLabel01";
-            this.inputLabel01.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel01.Size = new System.Drawing.Size(47, 15);
             this.inputLabel01.TabIndex = 5;
             this.inputLabel01.Text = "label1";
             // 
             // inputLabel02
             // 
             this.inputLabel02.AutoSize = true;
-            this.inputLabel02.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel02.Location = new System.Drawing.Point(389, 18);
+            this.inputLabel02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel02.Location = new System.Drawing.Point(630, 52);
             this.inputLabel02.Name = "inputLabel02";
-            this.inputLabel02.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel02.Size = new System.Drawing.Size(47, 15);
             this.inputLabel02.TabIndex = 7;
             this.inputLabel02.Text = "label1";
             // 
             // input02
             // 
             this.input02.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input02.Location = new System.Drawing.Point(389, 34);
+            this.input02.Location = new System.Drawing.Point(627, 68);
             this.input02.Name = "input02";
-            this.input02.Size = new System.Drawing.Size(124, 26);
+            this.input02.Size = new System.Drawing.Size(126, 26);
             this.input02.TabIndex = 6;
             // 
             // inputLabel03
             // 
             this.inputLabel03.AutoSize = true;
-            this.inputLabel03.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel03.Location = new System.Drawing.Point(516, 18);
+            this.inputLabel03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel03.Location = new System.Drawing.Point(762, 52);
             this.inputLabel03.Name = "inputLabel03";
-            this.inputLabel03.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel03.Size = new System.Drawing.Size(47, 15);
             this.inputLabel03.TabIndex = 9;
             this.inputLabel03.Text = "label2";
             // 
             // input03
             // 
             this.input03.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input03.Location = new System.Drawing.Point(519, 34);
+            this.input03.Location = new System.Drawing.Point(759, 68);
             this.input03.Name = "input03";
-            this.input03.Size = new System.Drawing.Size(124, 26);
+            this.input03.Size = new System.Drawing.Size(129, 26);
             this.input03.TabIndex = 8;
             // 
             // inputLabel04
             // 
             this.inputLabel04.AutoSize = true;
-            this.inputLabel04.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel04.Location = new System.Drawing.Point(646, 18);
+            this.inputLabel04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel04.Location = new System.Drawing.Point(891, 52);
             this.inputLabel04.Name = "inputLabel04";
-            this.inputLabel04.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel04.Size = new System.Drawing.Size(47, 15);
             this.inputLabel04.TabIndex = 11;
             this.inputLabel04.Text = "label3";
             // 
             // input04
             // 
             this.input04.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input04.Location = new System.Drawing.Point(649, 34);
+            this.input04.Location = new System.Drawing.Point(894, 68);
             this.input04.Name = "input04";
-            this.input04.Size = new System.Drawing.Size(124, 26);
+            this.input04.Size = new System.Drawing.Size(129, 26);
             this.input04.TabIndex = 10;
             // 
             // inputLabel05
             // 
             this.inputLabel05.AutoSize = true;
-            this.inputLabel05.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel05.Location = new System.Drawing.Point(776, 18);
+            this.inputLabel05.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel05.Location = new System.Drawing.Point(1026, 52);
             this.inputLabel05.Name = "inputLabel05";
-            this.inputLabel05.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel05.Size = new System.Drawing.Size(47, 15);
             this.inputLabel05.TabIndex = 13;
             this.inputLabel05.Text = "label4";
             // 
             // input05
             // 
             this.input05.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input05.Location = new System.Drawing.Point(779, 34);
+            this.input05.Location = new System.Drawing.Point(1029, 68);
             this.input05.Name = "input05";
-            this.input05.Size = new System.Drawing.Size(124, 26);
+            this.input05.Size = new System.Drawing.Size(129, 26);
             this.input05.TabIndex = 12;
             // 
             // inputLabel06
             // 
             this.inputLabel06.AutoSize = true;
-            this.inputLabel06.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel06.Location = new System.Drawing.Point(906, 18);
+            this.inputLabel06.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel06.Location = new System.Drawing.Point(1164, 52);
             this.inputLabel06.Name = "inputLabel06";
-            this.inputLabel06.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel06.Size = new System.Drawing.Size(47, 15);
             this.inputLabel06.TabIndex = 15;
             this.inputLabel06.Text = "label5";
             // 
             // input06
             // 
             this.input06.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input06.Location = new System.Drawing.Point(909, 34);
+            this.input06.Location = new System.Drawing.Point(1167, 68);
             this.input06.Name = "input06";
-            this.input06.Size = new System.Drawing.Size(124, 26);
+            this.input06.Size = new System.Drawing.Size(126, 26);
             this.input06.TabIndex = 14;
             // 
             // inputLabel07
             // 
             this.inputLabel07.AutoSize = true;
-            this.inputLabel07.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel07.Location = new System.Drawing.Point(1039, 18);
+            this.inputLabel07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel07.Location = new System.Drawing.Point(1299, 52);
             this.inputLabel07.Name = "inputLabel07";
-            this.inputLabel07.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel07.Size = new System.Drawing.Size(47, 15);
             this.inputLabel07.TabIndex = 17;
             this.inputLabel07.Text = "label6";
             // 
             // input07
             // 
             this.input07.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input07.Location = new System.Drawing.Point(1039, 34);
+            this.input07.Location = new System.Drawing.Point(1302, 68);
             this.input07.Name = "input07";
-            this.input07.Size = new System.Drawing.Size(124, 26);
+            this.input07.Size = new System.Drawing.Size(126, 26);
             this.input07.TabIndex = 16;
             // 
             // inputLabel08
             // 
             this.inputLabel08.AutoSize = true;
-            this.inputLabel08.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel08.Location = new System.Drawing.Point(1166, 18);
+            this.inputLabel08.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel08.Location = new System.Drawing.Point(91, 116);
             this.inputLabel08.Name = "inputLabel08";
-            this.inputLabel08.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel08.Size = new System.Drawing.Size(47, 15);
             this.inputLabel08.TabIndex = 19;
             this.inputLabel08.Text = "label7";
             // 
             // input08
             // 
             this.input08.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input08.Location = new System.Drawing.Point(1169, 34);
+            this.input08.Location = new System.Drawing.Point(94, 132);
             this.input08.Name = "input08";
             this.input08.Size = new System.Drawing.Size(124, 26);
             this.input08.TabIndex = 18;
@@ -267,10 +261,10 @@ namespace Adventures_Crud
             // inputLabel15
             // 
             this.inputLabel15.AutoSize = true;
-            this.inputLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel15.Location = new System.Drawing.Point(1026, 116);
             this.inputLabel15.Name = "inputLabel15";
-            this.inputLabel15.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel15.Size = new System.Drawing.Size(47, 15);
             this.inputLabel15.TabIndex = 33;
             this.inputLabel15.Text = "label8";
             // 
@@ -285,10 +279,10 @@ namespace Adventures_Crud
             // inputLabel14
             // 
             this.inputLabel14.AutoSize = true;
-            this.inputLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel14.Location = new System.Drawing.Point(891, 116);
             this.inputLabel14.Name = "inputLabel14";
-            this.inputLabel14.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel14.Size = new System.Drawing.Size(47, 15);
             this.inputLabel14.TabIndex = 31;
             this.inputLabel14.Text = "label9";
             // 
@@ -303,10 +297,10 @@ namespace Adventures_Crud
             // inputLabel13
             // 
             this.inputLabel13.AutoSize = true;
-            this.inputLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel13.Location = new System.Drawing.Point(756, 116);
             this.inputLabel13.Name = "inputLabel13";
-            this.inputLabel13.Size = new System.Drawing.Size(41, 13);
+            this.inputLabel13.Size = new System.Drawing.Size(55, 15);
             this.inputLabel13.TabIndex = 29;
             this.inputLabel13.Text = "label10";
             // 
@@ -321,10 +315,10 @@ namespace Adventures_Crud
             // inputLabel12
             // 
             this.inputLabel12.AutoSize = true;
-            this.inputLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel12.Location = new System.Drawing.Point(624, 116);
             this.inputLabel12.Name = "inputLabel12";
-            this.inputLabel12.Size = new System.Drawing.Size(41, 13);
+            this.inputLabel12.Size = new System.Drawing.Size(55, 15);
             this.inputLabel12.TabIndex = 27;
             this.inputLabel12.Text = "label11";
             // 
@@ -339,10 +333,10 @@ namespace Adventures_Crud
             // inputLabel11
             // 
             this.inputLabel11.AutoSize = true;
-            this.inputLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel11.Location = new System.Drawing.Point(486, 116);
             this.inputLabel11.Name = "inputLabel11";
-            this.inputLabel11.Size = new System.Drawing.Size(41, 13);
+            this.inputLabel11.Size = new System.Drawing.Size(55, 15);
             this.inputLabel11.TabIndex = 25;
             this.inputLabel11.Text = "label12";
             // 
@@ -357,10 +351,10 @@ namespace Adventures_Crud
             // inputLabel10
             // 
             this.inputLabel10.AutoSize = true;
-            this.inputLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel10.Location = new System.Drawing.Point(351, 116);
             this.inputLabel10.Name = "inputLabel10";
-            this.inputLabel10.Size = new System.Drawing.Size(41, 13);
+            this.inputLabel10.Size = new System.Drawing.Size(55, 15);
             this.inputLabel10.TabIndex = 23;
             this.inputLabel10.Text = "label13";
             this.inputLabel10.Click += new System.EventHandler(this.label13_Click);
@@ -376,17 +370,17 @@ namespace Adventures_Crud
             // inputLabel09
             // 
             this.inputLabel09.AutoSize = true;
-            this.inputLabel09.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel09.Location = new System.Drawing.Point(1299, 18);
+            this.inputLabel09.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel09.Location = new System.Drawing.Point(224, 116);
             this.inputLabel09.Name = "inputLabel09";
-            this.inputLabel09.Size = new System.Drawing.Size(41, 13);
+            this.inputLabel09.Size = new System.Drawing.Size(55, 15);
             this.inputLabel09.TabIndex = 21;
             this.inputLabel09.Text = "label14";
             // 
             // input09
             // 
             this.input09.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input09.Location = new System.Drawing.Point(1299, 34);
+            this.input09.Location = new System.Drawing.Point(224, 132);
             this.input09.Name = "input09";
             this.input09.Size = new System.Drawing.Size(124, 26);
             this.input09.TabIndex = 20;
@@ -394,10 +388,10 @@ namespace Adventures_Crud
             // inputLabel17
             // 
             this.inputLabel17.AutoSize = true;
-            this.inputLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel17.Location = new System.Drawing.Point(1299, 116);
             this.inputLabel17.Name = "inputLabel17";
-            this.inputLabel17.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel17.Size = new System.Drawing.Size(47, 15);
             this.inputLabel17.TabIndex = 37;
             this.inputLabel17.Text = "label8";
             // 
@@ -412,10 +406,10 @@ namespace Adventures_Crud
             // inputLabel16
             // 
             this.inputLabel16.AutoSize = true;
-            this.inputLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputLabel16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputLabel16.Location = new System.Drawing.Point(1164, 116);
             this.inputLabel16.Name = "inputLabel16";
-            this.inputLabel16.Size = new System.Drawing.Size(35, 13);
+            this.inputLabel16.Size = new System.Drawing.Size(47, 15);
             this.inputLabel16.TabIndex = 35;
             this.inputLabel16.Text = "label9";
             // 
@@ -430,37 +424,37 @@ namespace Adventures_Crud
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(91, 130);
+            this.button1.Location = new System.Drawing.Point(88, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 38;
-            this.button1.Text = "View";
+            this.button1.Text = "Edit";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(172, 130);
+            this.button2.Location = new System.Drawing.Point(169, 66);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 28);
             this.button2.TabIndex = 39;
-            this.button2.Text = "View";
+            this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(253, 130);
+            this.button3.Location = new System.Drawing.Point(250, 66);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 28);
             this.button3.TabIndex = 40;
-            this.button3.Text = "View";
+            this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(142, 215);
+            this.button4.Location = new System.Drawing.Point(331, 66);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 28);
             this.button4.TabIndex = 41;
