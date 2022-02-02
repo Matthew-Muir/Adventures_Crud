@@ -15,7 +15,7 @@ namespace Adventures_Crud
     public partial class Form1 : Form
     {
         //collection of accessible tables.
-        DbTable[] dbTables = new DbTable[] {new DbTable("Product",true), new DbTable("Product Model",true), new DbTable("Product Description",true), new DbTable("Product Model Product Description",true), new DbTable("Customer",false) };
+        DbTable[] dbTables = new DbTable[] {new DbTable("Product",true), new DbTable("Product Model",true), new DbTable("Product Description",true), new DbTable("Product Model Product Description",true), new DbTable("Customer",false), new DbTable("Address",false), new DbTable("Customer Address",false)};
 
         public Form1()
         {
@@ -35,14 +35,27 @@ namespace Adventures_Crud
             //Push data to data grid & update labels and text boxes
             if(formattedTableName != "")
             {
-                //LEFT OFF HERE!!! Need to create Proc at accepts any name and returns the table.
-                SqlDataAdapter da = new SqlDataAdapter($"EXEC  GetReadOnly{formattedTableName}", Properties.Settings.Default.Connection);
+                
+                SqlDataAdapter da = new SqlDataAdapter($"EXEC  GetTable{formattedTableName}", Properties.Settings.Default.Connection);
                 DataSet dataSet = new DataSet();
                 da.Fill(dataSet);
                 dataGridView1.DataSource = dataSet.Tables[0];
 
                 var listOfColumns = dataGridView1.Columns;
                 UpdateFieldsAndLabels(listOfColumns, selectedTable);
+
+                if (selectedTable.ReadOnly)
+                {
+                    deleteDataButton.Enabled = false;
+                    addDataButton.Enabled = false;
+                    editDataButton.Enabled = false;
+                }
+                else
+                {
+                    deleteDataButton.Enabled = true;
+                    addDataButton.Enabled = true;
+                    editDataButton.Enabled = true;
+                }
             }
 
         }
@@ -50,6 +63,18 @@ namespace Adventures_Crud
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateFieldsAndLabels();
+            
+        }
+
+        private void addDataButton_Click(object sender, EventArgs e)
+        {           
+            //Grab table name from dropdown
+            DbTable selectedTable = (DbTable)databaseTablesDropDown.SelectedItem;
+            var formattedTableName = selectedTable.Name.Replace(" ", "");
+            LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
+            var temp = selectedTable.AddtoTableProc(array);
+            Console.WriteLine(temp);
+
         }
 
         private void UpdateFieldsAndLabels(DataGridViewColumnCollection cc = null, DbTable selectedTable = null)
@@ -87,6 +112,11 @@ namespace Adventures_Crud
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableSelectLabel_Click(object sender, EventArgs e)
         {
 
         }

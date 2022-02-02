@@ -67,10 +67,9 @@ namespace Adventures_Crud
             this.input17 = new System.Windows.Forms.TextBox();
             this.inputLabel16 = new System.Windows.Forms.Label();
             this.input16 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.editDataButton = new System.Windows.Forms.Button();
+            this.addDataButton = new System.Windows.Forms.Button();
+            this.deleteDataButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,23 +100,24 @@ namespace Adventures_Crud
             this.databaseTablesDropDown.FormattingEnabled = true;
             this.databaseTablesDropDown.Location = new System.Drawing.Point(7, 32);
             this.databaseTablesDropDown.Name = "databaseTablesDropDown";
-            this.databaseTablesDropDown.Size = new System.Drawing.Size(399, 28);
+            this.databaseTablesDropDown.Size = new System.Drawing.Size(318, 28);
             this.databaseTablesDropDown.TabIndex = 2;
             // 
             // tableSelectLabel
             // 
             this.tableSelectLabel.AutoSize = true;
             this.tableSelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableSelectLabel.Location = new System.Drawing.Point(144, 9);
+            this.tableSelectLabel.Location = new System.Drawing.Point(99, 9);
             this.tableSelectLabel.Name = "tableSelectLabel";
             this.tableSelectLabel.Size = new System.Drawing.Size(145, 20);
             this.tableSelectLabel.TabIndex = 3;
             this.tableSelectLabel.Text = "Database Tables";
+            this.tableSelectLabel.Click += new System.EventHandler(this.tableSelectLabel_Click);
             // 
             // input01
             // 
             this.input01.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input01.Location = new System.Drawing.Point(489, 68);
+            this.input01.Location = new System.Drawing.Point(354, 34);
             this.input01.Name = "input01";
             this.input01.Size = new System.Drawing.Size(129, 26);
             this.input01.TabIndex = 4;
@@ -126,7 +126,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel01.AutoSize = true;
             this.inputLabel01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel01.Location = new System.Drawing.Point(492, 52);
+            this.inputLabel01.Location = new System.Drawing.Point(357, 18);
             this.inputLabel01.Name = "inputLabel01";
             this.inputLabel01.Size = new System.Drawing.Size(47, 15);
             this.inputLabel01.TabIndex = 5;
@@ -136,7 +136,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel02.AutoSize = true;
             this.inputLabel02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel02.Location = new System.Drawing.Point(630, 52);
+            this.inputLabel02.Location = new System.Drawing.Point(495, 18);
             this.inputLabel02.Name = "inputLabel02";
             this.inputLabel02.Size = new System.Drawing.Size(47, 15);
             this.inputLabel02.TabIndex = 7;
@@ -145,7 +145,7 @@ namespace Adventures_Crud
             // input02
             // 
             this.input02.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input02.Location = new System.Drawing.Point(627, 68);
+            this.input02.Location = new System.Drawing.Point(492, 34);
             this.input02.Name = "input02";
             this.input02.Size = new System.Drawing.Size(126, 26);
             this.input02.TabIndex = 6;
@@ -154,7 +154,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel03.AutoSize = true;
             this.inputLabel03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel03.Location = new System.Drawing.Point(762, 52);
+            this.inputLabel03.Location = new System.Drawing.Point(627, 18);
             this.inputLabel03.Name = "inputLabel03";
             this.inputLabel03.Size = new System.Drawing.Size(47, 15);
             this.inputLabel03.TabIndex = 9;
@@ -163,7 +163,7 @@ namespace Adventures_Crud
             // input03
             // 
             this.input03.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input03.Location = new System.Drawing.Point(759, 68);
+            this.input03.Location = new System.Drawing.Point(624, 34);
             this.input03.Name = "input03";
             this.input03.Size = new System.Drawing.Size(129, 26);
             this.input03.TabIndex = 8;
@@ -172,7 +172,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel04.AutoSize = true;
             this.inputLabel04.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel04.Location = new System.Drawing.Point(891, 52);
+            this.inputLabel04.Location = new System.Drawing.Point(756, 18);
             this.inputLabel04.Name = "inputLabel04";
             this.inputLabel04.Size = new System.Drawing.Size(47, 15);
             this.inputLabel04.TabIndex = 11;
@@ -181,7 +181,7 @@ namespace Adventures_Crud
             // input04
             // 
             this.input04.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input04.Location = new System.Drawing.Point(894, 68);
+            this.input04.Location = new System.Drawing.Point(759, 34);
             this.input04.Name = "input04";
             this.input04.Size = new System.Drawing.Size(129, 26);
             this.input04.TabIndex = 10;
@@ -190,7 +190,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel05.AutoSize = true;
             this.inputLabel05.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel05.Location = new System.Drawing.Point(1026, 52);
+            this.inputLabel05.Location = new System.Drawing.Point(891, 18);
             this.inputLabel05.Name = "inputLabel05";
             this.inputLabel05.Size = new System.Drawing.Size(47, 15);
             this.inputLabel05.TabIndex = 13;
@@ -199,7 +199,7 @@ namespace Adventures_Crud
             // input05
             // 
             this.input05.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input05.Location = new System.Drawing.Point(1029, 68);
+            this.input05.Location = new System.Drawing.Point(894, 34);
             this.input05.Name = "input05";
             this.input05.Size = new System.Drawing.Size(129, 26);
             this.input05.TabIndex = 12;
@@ -208,7 +208,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel06.AutoSize = true;
             this.inputLabel06.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel06.Location = new System.Drawing.Point(1164, 52);
+            this.inputLabel06.Location = new System.Drawing.Point(1029, 18);
             this.inputLabel06.Name = "inputLabel06";
             this.inputLabel06.Size = new System.Drawing.Size(47, 15);
             this.inputLabel06.TabIndex = 15;
@@ -217,7 +217,7 @@ namespace Adventures_Crud
             // input06
             // 
             this.input06.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input06.Location = new System.Drawing.Point(1167, 68);
+            this.input06.Location = new System.Drawing.Point(1032, 34);
             this.input06.Name = "input06";
             this.input06.Size = new System.Drawing.Size(126, 26);
             this.input06.TabIndex = 14;
@@ -226,7 +226,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel07.AutoSize = true;
             this.inputLabel07.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel07.Location = new System.Drawing.Point(1299, 52);
+            this.inputLabel07.Location = new System.Drawing.Point(1164, 18);
             this.inputLabel07.Name = "inputLabel07";
             this.inputLabel07.Size = new System.Drawing.Size(47, 15);
             this.inputLabel07.TabIndex = 17;
@@ -235,7 +235,7 @@ namespace Adventures_Crud
             // input07
             // 
             this.input07.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input07.Location = new System.Drawing.Point(1302, 68);
+            this.input07.Location = new System.Drawing.Point(1167, 34);
             this.input07.Name = "input07";
             this.input07.Size = new System.Drawing.Size(126, 26);
             this.input07.TabIndex = 16;
@@ -244,7 +244,7 @@ namespace Adventures_Crud
             // 
             this.inputLabel08.AutoSize = true;
             this.inputLabel08.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputLabel08.Location = new System.Drawing.Point(91, 116);
+            this.inputLabel08.Location = new System.Drawing.Point(1301, 18);
             this.inputLabel08.Name = "inputLabel08";
             this.inputLabel08.Size = new System.Drawing.Size(47, 15);
             this.inputLabel08.TabIndex = 19;
@@ -253,7 +253,7 @@ namespace Adventures_Crud
             // input08
             // 
             this.input08.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.input08.Location = new System.Drawing.Point(94, 132);
+            this.input08.Location = new System.Drawing.Point(1304, 34);
             this.input08.Name = "input08";
             this.input08.Size = new System.Drawing.Size(124, 26);
             this.input08.TabIndex = 18;
@@ -421,55 +421,48 @@ namespace Adventures_Crud
             this.input16.Size = new System.Drawing.Size(129, 26);
             this.input16.TabIndex = 34;
             // 
-            // button1
+            // editDataButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(88, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editDataButton.Enabled = false;
+            this.editDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editDataButton.Location = new System.Drawing.Point(88, 66);
+            this.editDataButton.Name = "editDataButton";
+            this.editDataButton.Size = new System.Drawing.Size(75, 28);
+            this.editDataButton.TabIndex = 38;
+            this.editDataButton.Text = "Edit";
+            this.editDataButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // addDataButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(169, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
-            this.button2.TabIndex = 39;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addDataButton.Enabled = false;
+            this.addDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDataButton.Location = new System.Drawing.Point(169, 66);
+            this.addDataButton.Name = "addDataButton";
+            this.addDataButton.Size = new System.Drawing.Size(75, 28);
+            this.addDataButton.TabIndex = 39;
+            this.addDataButton.Text = "Add";
+            this.addDataButton.UseVisualStyleBackColor = true;
+            this.addDataButton.Click += new System.EventHandler(this.addDataButton_Click);
             // 
-            // button3
+            // deleteDataButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(250, 66);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 28);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(331, 66);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 28);
-            this.button4.TabIndex = 41;
-            this.button4.Text = "Filter";
-            this.button4.UseVisualStyleBackColor = true;
+            this.deleteDataButton.Enabled = false;
+            this.deleteDataButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteDataButton.Location = new System.Drawing.Point(250, 66);
+            this.deleteDataButton.Name = "deleteDataButton";
+            this.deleteDataButton.Size = new System.Drawing.Size(75, 28);
+            this.deleteDataButton.TabIndex = 40;
+            this.deleteDataButton.Text = "Delete";
+            this.deleteDataButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 699);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.deleteDataButton);
+            this.Controls.Add(this.addDataButton);
+            this.Controls.Add(this.editDataButton);
             this.Controls.Add(this.inputLabel17);
             this.Controls.Add(this.input17);
             this.Controls.Add(this.inputLabel16);
@@ -559,10 +552,9 @@ namespace Adventures_Crud
         private System.Windows.Forms.TextBox input17;
         private System.Windows.Forms.Label inputLabel16;
         private System.Windows.Forms.TextBox input16;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button editDataButton;
+        private System.Windows.Forms.Button addDataButton;
+        private System.Windows.Forms.Button deleteDataButton;
     }
 }
 
