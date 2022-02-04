@@ -431,6 +431,7 @@ namespace Adventures_Crud
             this.editDataButton.TabIndex = 38;
             this.editDataButton.Text = "Edit";
             this.editDataButton.UseVisualStyleBackColor = true;
+            this.editDataButton.Click += new System.EventHandler(this.editDataButton_Click);
             // 
             // addDataButton
             // 
@@ -454,6 +455,7 @@ namespace Adventures_Crud
             this.deleteDataButton.TabIndex = 40;
             this.deleteDataButton.Text = "Delete";
             this.deleteDataButton.UseVisualStyleBackColor = true;
+            this.deleteDataButton.Click += new System.EventHandler(this.deleteDataButton_Click);
             // 
             // Form1
             // 

@@ -11,18 +11,18 @@ namespace Adventures_Crud
     {
         public bool ReadOnly { get; }
         public string Name { get; }
-        public string AddProc { get; set; }
+        public bool GetReturn { get; set; }
 
-        public DbTable(string name, bool isReadOnly, string addProc = null)
+        public DbTable(string name, bool isReadOnly, bool getReturn = false)
         {
             this.ReadOnly = isReadOnly;
             this.Name = name;
-            this.AddProc = addProc;
+            this.GetReturn = getReturn;
         }
 
         public string AddtoTableProc(LabelInputPair[] cc)
         {
-            string proc = $"EXECUTE AddTo{this.ToString()} ";
+            string proc = $"EXEC AddTo{this.ToString(true)} ";
             for (int i = 0; i < cc.Length; i++)
             {
                 var temp = cc[i];
@@ -30,9 +30,25 @@ namespace Adventures_Crud
                     proc += $" @{temp.LabelField.Text} = '{temp.Textbox.Text}',";
                 }
             }
-            //LEFT OFF HERE!!! protect against receiving all empty fields.
+
             proc = proc.Substring(0, proc.Length - 1);
             return proc;
+        }
+
+        public string DeleteFromTableProc(LabelInputPair[] cc)
+        {
+            string proc = $"EXEC DeleteFrom{this.ToString(true)} ";
+            if (!string.IsNullOrEmpty(cc[0].Textbox.Text))
+            {
+                proc += "@" + cc[0].LabelField.Text + $" = {cc[0].Textbox.Text};";
+            }
+            
+            return proc;
+        }
+
+        public string ToString(bool shortened = false)
+        {
+            return Name.Replace(" " , "");
         }
 
         public override string ToString()
