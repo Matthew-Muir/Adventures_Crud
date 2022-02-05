@@ -112,7 +112,6 @@ namespace Adventures_Crud
             this.tableSelectLabel.Size = new System.Drawing.Size(145, 20);
             this.tableSelectLabel.TabIndex = 3;
             this.tableSelectLabel.Text = "Database Tables";
-            this.tableSelectLabel.Click += new System.EventHandler(this.tableSelectLabel_Click);
             // 
             // input01
             // 
@@ -357,7 +356,6 @@ namespace Adventures_Crud
             this.inputLabel10.Size = new System.Drawing.Size(55, 15);
             this.inputLabel10.TabIndex = 23;
             this.inputLabel10.Text = "label13";
-            this.inputLabel10.Click += new System.EventHandler(this.label13_Click);
             // 
             // input10
             // 

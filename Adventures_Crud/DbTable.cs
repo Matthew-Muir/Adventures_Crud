@@ -12,12 +12,14 @@ namespace Adventures_Crud
         public bool ReadOnly { get; }
         public string Name { get; }
         public bool GetReturn { get; set; }
+        public int[] EditIndexes { get; set; }
 
-        public DbTable(string name, bool isReadOnly, bool getReturn = false)
+        public DbTable(string name, bool isReadOnly, bool getReturn = false, int[] editIndexes = null)
         {
             this.ReadOnly = isReadOnly;
             this.Name = name;
             this.GetReturn = getReturn;
+            this.EditIndexes = editIndexes;
         }
 
         public string AddtoTableProc(LabelInputPair[] cc)
