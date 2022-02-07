@@ -13,13 +13,32 @@ namespace Adventures_Crud
         public string Name { get; }
         public bool GetReturn { get; set; }
         public int[] EditIndexes { get; set; }
+        public int[] AddIndexes { get; set; }
+        public int[] DeleteIndexes { get; set; } = new int[] { 0 };
 
-        public DbTable(string name, bool isReadOnly, bool getReturn = false, int[] editIndexes = null)
+        public DbTable(string name, bool isReadOnly, bool getReturn = false, int[] editIndexes = null, int[] addIndexes = null)
         {
             this.ReadOnly = isReadOnly;
             this.Name = name;
             this.GetReturn = getReturn;
             this.EditIndexes = editIndexes;
+            this.AddIndexes = addIndexes;
+        }
+
+        public string EditTableProc(LabelInputPair[] cc)
+        {
+            string proc = $"EXEC Edit{this.ToString(true)} ";
+            for (int i = 0; i < cc.Length; i++)
+            {
+                var temp = cc[i];
+                if (!string.IsNullOrEmpty(temp.Textbox.Text))
+                {
+                    proc += $" @{temp.LabelField.Text} = '{temp.Textbox.Text}',";
+                }
+            }
+
+            proc = proc.Substring(0, proc.Length - 1);
+            return proc;
         }
 
         public string AddtoTableProc(LabelInputPair[] cc)

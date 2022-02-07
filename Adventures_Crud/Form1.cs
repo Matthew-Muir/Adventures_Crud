@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace Adventures_Crud
@@ -20,9 +14,9 @@ namespace Adventures_Crud
             new DbTable("Product Model",true),
             new DbTable("Product Description",true),
             new DbTable("Product Model Product Description",true),
-            new DbTable("Customer",false,editIndexes: new int[]{1,2,3}),
-            new DbTable("Address",false,true),
-            new DbTable("Customer Address",false,true)
+            new DbTable("Customer",false, editIndexes: new int[]{0,1,2,3,4,5,6,7,8,9,10},addIndexes: new int[]{1,2,3,4,5,6,7,8,9,10}),
+            new DbTable("Address",false,true,editIndexes: new int[]{0,1,2,3,4,5,6},addIndexes: new int[]{1,2,3,4,5,6}),
+            new DbTable("Customer Address",false,true, editIndexes: new int[]{0,1,2}, addIndexes: new int[]{0,1,2})
         };
 
         Modes currentMode = Modes.View;
@@ -61,42 +55,52 @@ namespace Adventures_Crud
             {
 
                 SqlDataAdapter da = new SqlDataAdapter($"EXEC  GetTable{formattedTableName}", Properties.Settings.Default.Connection);
-                DataSet dataSet = new DataSet();
-                da.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0];
-                currentMode = Modes.View;
-                if (selectedTable.ReadOnly)
+                using (da)
                 {
-                    deleteDataButton.Enabled = false;
-                    addDataButton.Enabled = false;
-                    editDataButton.Enabled = false;
+                    DataSet dataSet = new DataSet();
+                    da.Fill(dataSet);
+                    dataGridView1.DataSource = dataSet.Tables[0];
+                    currentMode = Modes.View;
+                    if (selectedTable.ReadOnly)
+                    {
+                        deleteDataButton.Enabled = false;
+                        addDataButton.Enabled = false;
+                        editDataButton.Enabled = false;
+                    }
+                    else
+                    {
+                        deleteDataButton.Enabled = true;
+                        addDataButton.Enabled = true;
+                        editDataButton.Enabled = true;
+                    }
                 }
-                else
-                {
-                    deleteDataButton.Enabled = true;
-                    addDataButton.Enabled = true;
-                    editDataButton.Enabled = true;
-                }
+
             }
 
         }
 
         private void addDataButton_Click(object sender, EventArgs e)
         {
-            //Grab table name from dropdown
-            DbTable selectedTable = (DbTable)databaseTablesDropDown.SelectedItem;
-            LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
-            var addToTableProcString = selectedTable.AddtoTableProc(array);
-            SqlDataAdapter da = new SqlDataAdapter(addToTableProcString, Properties.Settings.Default.Connection);
-            DataSet dataSet = new DataSet();
-            Console.WriteLine(addToTableProcString);
-
-            da.Fill(dataSet);
-            MessageBox.Show($"Add to {selectedTable.Name} Successful!");
+            DbTable table = (DbTable)databaseTablesDropDown.SelectedItem;
 
 
-
-
+            if (currentMode != Modes.Add)
+            {
+                var cc = dataGridView1.Columns;
+                UpdateFieldsAndLabels(cc, table.AddIndexes);
+            }
+            else
+            {
+                LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
+                var addToTableProcString = table.AddtoTableProc(array);
+                SqlDataAdapter da = new SqlDataAdapter(addToTableProcString, Properties.Settings.Default.Connection);
+                using (da)
+                {
+                    DataSet dataSet = new DataSet();
+                    da.Fill(dataSet);
+                }
+            }
+            currentMode = Modes.Add;
         }
 
         private void UpdateFieldsAndLabels(DataGridViewColumnCollection cc = null, int[] indexArray = null)
@@ -128,6 +132,7 @@ namespace Adventures_Crud
                 {
                     array[i].LabelField.Text = "...";
                     array[i].Textbox.Enabled = false;
+                    array[i].Textbox.Text = "";
                 }
                 if(indexArray!= null)
             {
@@ -137,40 +142,34 @@ namespace Adventures_Crud
                     array[index].Textbox.Enabled = true;
                 }
             }
-
-
-
-
-                //for (int i = 0; i < array.Length; i++)
-                //{
-                //    if (i < cc.Count)
-                //    {
-                //        array[i].LabelField.Text = cc[i].HeaderText;
-                //        array[i].Textbox.Enabled = !selectedTable.ReadOnly;
-                //    }
-                //    else
-                //    {
-                //        array[i].LabelField.Text = "...";
-                //        array[i].Textbox.Enabled = false;
-                //    }
-
-                //}
             
 
         }
 
         private void deleteDataButton_Click(object sender, EventArgs e)
         {
-            //Grab table name from dropdown
-            DbTable selectedTable = (DbTable)databaseTablesDropDown.SelectedItem;
-            LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
-            var addToTableProcString = selectedTable.DeleteFromTableProc(array);
-            SqlDataAdapter da = new SqlDataAdapter(addToTableProcString, Properties.Settings.Default.Connection);
-            DataSet dataSet = new DataSet();
-            Console.WriteLine(addToTableProcString);
+            var selectedTable = GetCurrentTable();
 
-            da.Fill(dataSet);
-            // MessageBox.Show($"Add to {selectedTable.Name} Successful!");
+            if (currentMode != Modes.Delete)
+            {
+                var cc = dataGridView1.Columns;
+                UpdateFieldsAndLabels(cc, selectedTable.DeleteIndexes);
+            }
+            else
+            {
+                LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
+                var addToTableProcString = selectedTable.DeleteFromTableProc(array);
+                SqlDataAdapter da = new SqlDataAdapter(addToTableProcString, Properties.Settings.Default.Connection);
+                using (da)
+                {
+                    DataSet dataSet = new DataSet();
+                    da.Fill(dataSet);
+                }
+
+            }
+            currentMode = Modes.Delete;
+
+ 
         }
 
         private void editDataButton_Click(object sender, EventArgs e)
@@ -184,50 +183,24 @@ namespace Adventures_Crud
             }
             else
             {
-                //LEFT OFF HERE!!! Pass values from fields into PROC.
-                SqlDataAdapter da = new SqlDataAdapter($"EXEC  GetTable{table.ToString(true)}", Properties.Settings.Default.Connection);
-                DataSet dataSet = new DataSet();
-                da.Fill(dataSet);
+                LabelInputPair[] array = new LabelInputPair[] { new LabelInputPair(input01, inputLabel01), new LabelInputPair(input02, inputLabel02), new LabelInputPair(input03, inputLabel03), new LabelInputPair(input04, inputLabel04), new LabelInputPair(input05, inputLabel05), new LabelInputPair(input06, inputLabel06), new LabelInputPair(input07, inputLabel07), new LabelInputPair(input08, inputLabel08), new LabelInputPair(input09, inputLabel09), new LabelInputPair(input10, inputLabel10), new LabelInputPair(input11, inputLabel11), new LabelInputPair(input12, inputLabel12), new LabelInputPair(input13, inputLabel13), new LabelInputPair(input14, inputLabel14), new LabelInputPair(input15, inputLabel15), new LabelInputPair(input16, inputLabel16), new LabelInputPair(input17, inputLabel17) };
+                SqlDataAdapter da = new SqlDataAdapter(table.EditTableProc(array), Properties.Settings.Default.Connection);
+                using (da)
+                {
+                    DataSet dataSet = new DataSet();
+                    da.Fill(dataSet);
+                }
+                               
             }
             currentMode = Modes.Edit;
         }
 
-        private void UpdateButtons(Modes mode)
-        {
-            switch (mode)
-            {
-                case Modes.View:
-                    deleteDataButton.Enabled = false;
-                    addDataButton.Enabled = false;
-                    editDataButton.Enabled = false;
-                    break;
-                case Modes.Edit:
-                    editDataButton.Enabled = true;
-                    deleteDataButton.Enabled = false;
-                    addDataButton.Enabled = false;
-                    break;
-                case Modes.Add:
-                    addDataButton.Enabled = true;
-                    editDataButton.Enabled = false;
-                    deleteDataButton.Enabled = false;
-                    break;
-                case Modes.Delete:
-                    deleteDataButton.Enabled = true;
-                    editDataButton.Enabled = false;
-                    addDataButton.Enabled = false;
-                    break;
-                default:
-                    break;
-            }
-        }
         private void DisableButtons()
         {
             editDataButton.Enabled = false;
             deleteDataButton.Enabled = false;
             addDataButton.Enabled = false;
         }
-
-
 
         private void dataBaseTablesDropDown_SelectedIndexChanged(object sender, System.EventArgs e)
         {

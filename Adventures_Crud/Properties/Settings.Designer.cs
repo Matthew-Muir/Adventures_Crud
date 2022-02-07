@@ -27,7 +27,7 @@ namespace Adventures_Crud.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=AdventureWorksLT2019;Persist Security Info=True;Use" +
-            "r ID=CentraliaUser2021;Password=IT410User2021")]
+            "r ID=CentraliaUser2021;Password=IT410User2021; Pooling=true; Max Pool Size=5;")]
         public string Connection {
             get {
                 return ((string)(this["Connection"]));
